@@ -1,0 +1,428 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: myFont;
+    src: url(fonts/Montserrat-Bold.ttf);
+}
+header{
+    box-shadow: 0 0 5px white(0, 0, 0, 0.3);
+    border-bottom: 1px solid black;
+}
+.container {
+    max-width: 1350px;
+    margin: 0 auto;
+}
+header {
+    position: relative;
+}
+.flex-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+#vehicles:hover{
+    transform: scale(1.2);
+    transition:0.3s ease; ;
+}
+#vehicles:not(:hover){
+    transform: scale(1);
+    transition:0.3s ease ;
+}
+.navigation {
+    display: flex;
+    align-items: center;
+}
+.navigation li {
+    list-style: none;
+}
+.navigation li button{
+    border: none;
+    background-color: white;
+    color: black;
+    margin-right: 15px;
+    font-family: myFont;
+    font-size: 14px;
+}
+.slider-wrapper {
+    position: absolute;
+    z-index: 2;
+    background: #eee;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    height: 0;
+    display: none;
+    transition: height 0.3s ease;
+    width: 100%;
+}
+.swiper{
+    width: 100%;
+    height: 100%;
+}
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.swiper-button-next,
+.swiper-button-prev{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    color: #fff;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.swiper-button-prev{
+    left: 10px;
+}
+.swiper-button-next {
+    right: 15px;
+}
+.car-wrapper{
+    max-width: 1150px ;
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: 30px auto;
+}
+.car-wrapper img{
+    width: 250px;
+    padding-top: 20px;
+}
+.info-wrapper:hover{
+    background-color: rgb(174, 170, 170);
+    transition: 0.3s linear;
+    cursor: pointer;
+    border-radius: 15px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+.info-wrapper h2{
+    font-size: 20px;
+    margin: 5px 0;
+}
+.info-wrapper span{
+    font-size: 12px;
+}
+.slider-wrapper {
+    transition: height 0.3s ease;
+}
+.fade-in {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.fade-in.show {
+    opacity: 1;
+}
+.my-container{
+    background-image: url(images/backg-img1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: grid;
+    place-items: center;
+    display: grid;
+    height: 640px;
+}
+.my-container h1{
+    color: white;
+    border-bottom: 3px solid white;
+    font-size: 50px;
+}
+.my-container p{
+    color: white;
+    margin: 10px 0px 300px 0px;
+    font-size: 25px;
+}
+.learn-more-btn:hover .btn{
+    color: white;
+}
+
+.learn-more-btn a{
+    border: 2px solid white;
+    cursor: pointer;
+    background-color: #eee;
+    color: black;
+    font-size: 13px;
+    padding: 15px 50px;
+    font-family: myfont;
+}
+.learn-more-btn a:hover{
+    background-color: transparent;
+    color: black;
+    text-decoration: none;
+    transition:0.3s ease;
+}
+.my-container2{
+    background-image: url(images/back-img2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.slide{
+    overflow-y: scroll;
+}
+.tools{
+    display: grid;
+    place-items: center;
+    height: 100px;
+    flex: 0 0 auto;
+    padding: 0 40px;
+    border-radius: 20px;
+}
+.tools a{
+    color: black;
+    text-decoration: none;
+    font-family: myfont;
+    margin-top: 15px;
+}
+.tools:hover {
+    background-color: rgb(162, 158, 158);
+    transition: 0.3s ease;
+}
+.tools:hover img {
+    opacity: 0.6;
+}
+.tools a:hover{
+    color: black;
+}
+.shopping-tools{
+    margin: 50px 0;
+    border-bottom: 1px solid rgb(178, 175, 175);
+    max-width: 1100px;
+    margin: 50px auto;
+    padding-bottom: 40px;
+}
+.tools-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+.vehicles-wrapper{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+.vehicles-and-current-offers , .vehicles{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.vehicles-and-current-offers{
+    max-width: 100%;
+}
+.vehicles-and-current-offers h3{
+    margin: 50px 0;
+}
+.img-wrapper{
+    width: 320px;
+    height: 170px;
+    overflow: hidden;
+}
+.img-wrapper img{
+    width: 100%;
+    height: 100%;
+}
+.img-wrapper img:hover{
+    transform: scale(1.1);
+    transition:0.3s ease ;
+}
+.img-wrapper img:not(:hover){
+    transform: scale(1);
+    transition:0.3s ease ;
+}
+.vehicles h4{
+    margin-top: 40px;
+    font-family: myFont;
+}
+.vehicles{
+    flex: 1;
+    height: 350px;
+}
+.vehicles span{
+    text-align: center;
+    margin: 10px 0;
+}
+.learn-more-btn2{
+    border: 2px solid black;
+    padding: 13px 50px;
+}
+.learn-more-btn2:hover{
+    background-color: black;
+    transition:0.3s ease  ;
+}
+.learn-more-btn2 a{
+    color: rgb(37, 37, 82);
+    font-family: myFont;
+}
+.relative-for-h3{
+    position: relative;
+    height: 160px;
+}
+.relative-for-h3 h3{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+.suv-wrapper{
+    display: flex;
+    overflow-x: auto;
+    align-items: center;
+    justify-content: space-between;
+}
+.lexus-car{
+    display: grid;
+    place-items: center;
+    margin:0px 40px 0px 10px;
+}
+.lexus-car img{
+    width: 150px;
+    margin-bottom: 20px;
+}
+.car-model{
+    border: none;
+    font-family: myFont;
+    background-color: white;
+}
+.car-model:hover{
+    text-decoration: underline;
+    transform: scale(1.1);
+    transition:0.3s ease ;
+}
+.explore-lexus-wrapper , .nature-img{
+    width: 100%;
+}
+.nature-img{
+    height: 400px;
+}
+.explore-lexus-wrapper{
+    position: relative;
+}
+.nii , .your-lexus-picture-wrapper{
+    flex: 1;
+}
+.your-lexus-picture{
+    width: 100%;
+}
+.btn-flex-box{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 320px;
+}
+.your-lexus{
+    display: flex;
+    justify-content: space-between;
+}
+.your-lexus-wrapper{
+    width: 100%;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+}
+.your-lexus-wrapper h2{
+    margin: -10px 0px 50px 0px;
+    font-size: 50px;
+    text-decoration: underline;
+    color: white;
+}
+.your-lexus-wrapper p{
+    font-size: 20px;
+    color: white;
+}
+.limited-edition-cars-wrapper{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.limited-edition-cars{
+    width: 430px;
+    padding: 20px;
+    position: relative;
+    margin: 45px 0;
+}
+.limited-edition-cars img{
+    width: 100%;
+}
+.limited-info{
+    display: grid;
+    place-items: center;
+    position: absolute;
+    left: 50%;
+    top: 80%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    height: 100px;
+}
+.limited-info p{
+    color: white;
+    font-family: myFont;
+    width: 80%;
+    text-align: center;
+}
+.limited-edition-car-img img{
+    border-radius: 20px;
+}
+.limited-edition-car-img img:hover{
+    transform: scale(1.05);
+    transition:0.3s ease ;
+}
+.limited-edition-car-img img:not(:hover){
+    transform: scale(1);
+    transition:0.3s ease ;
+}
+.future-cars{
+    display: grid;
+    place-items: center;
+    margin-top: 120px;
+}
+@media (max-width: 750px) {
+    .your-lexus{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .your-lexus-picture-wrapper{
+        margin-top: 0px;
+    }
+    .nature-img{
+        height: 450px;
+    }
+    .limited-edition-cars{
+        width: auto;
+    }
+    .vehicles{
+        width: 290px;
+    }
+    .limited-info{
+        top: 75%;
+    }
+    h3{
+        text-align: center;
+    }
+    .btn-flex-box{
+        width: 300px;
+    }
+}
