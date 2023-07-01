@@ -10,13 +10,11 @@
 header{
     box-shadow: 0 0 5px white(0, 0, 0, 0.3);
     border-bottom: 1px solid black;
+    position: relative;
 }
 .container {
     max-width: 1350px;
     margin: 0 auto;
-}
-header {
-    position: relative;
 }
 .flex-box {
     display: flex;
@@ -47,9 +45,39 @@ header {
     font-family: myFont;
     font-size: 14px;
 }
-.slider-wrapper {
+.burger-icon{
+    width: 40px;
+    display: none;
+}
+.navigation-wrapper{
+    display: grid;
+    place-items: center;
+    width: 100%;
     position: absolute;
     z-index: 2;
+    background: #eee;
+    display: none;
+    transition: display 0.5s ease;
+}
+.list{
+    height: 60px;
+    display: grid;
+    place-items: center;
+}
+.list a , .list button{
+    border: none;
+    background-color: #eee;
+    color: black;
+    text-decoration: none;
+    font-family: myFont;
+}
+.burger-btn{
+    border-bottom: 2px solid rgb(111, 111, 111);
+    width: 100%;
+}
+.slider-wrapper {
+    position: absolute;
+    z-index: 3;
     background: #eee;
     font-size: 14px;
     color: #000;
@@ -424,5 +452,11 @@ header {
     }
     .btn-flex-box{
         width: 300px;
+    }
+    .regular-li{
+        display: none;
+    }
+    .burger-icon{
+        display: block;
     }
 }

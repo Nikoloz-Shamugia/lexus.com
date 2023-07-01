@@ -100,3 +100,48 @@ btn10.addEventListener('click' , () => {
   mainImg.setAttribute('src' , "images/lx.avif")
   carName.textContent = 'LX'
 })
+
+const burgerIcon = document.querySelector('.burger-icon')
+const navigationWrapper = document.querySelector('.navigation-wrapper')
+let clickCount2 = 0;
+
+burgerIcon.addEventListener('click', () => {
+  clickCount2++;
+
+  if (clickCount2 === 1) {
+    navigationWrapper.style.display = 'block';
+  } else if (clickCount2 === 2) {
+    navigationWrapper.style.display = 'none';
+    clickCount2 = 0;
+  }
+});
+const burgerBtn = document.getElementById('burger-icon-btn');
+let isOpen = false;
+
+burgerBtn.addEventListener('click', () => {
+  if (!isOpen) {
+    slider.style.display = 'block';
+    slider.style.marginTop = '60px';
+    slider.style.height = '0';
+    leftBtn.style.display = 'none'
+    rightBtn.style.display = 'none'
+    slider.style.transition = 'height 0.3s ease-in-out';
+    slider.style.overflow = 'hidden';
+    setTimeout(() => {
+      slider.style.height = '650px';
+    }, 10);
+    isOpen = true;
+  }
+   else {
+    slider.style.height = '0';
+    leftBtn.style.display = 'block'
+    rightBtn.style.display = 'block'
+    setTimeout(() => {
+      slider.style.display = 'none';
+    }, 300);
+    isOpen = false;
+  }
+});
+
+
+
