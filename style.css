@@ -158,7 +158,7 @@ header{
     opacity: 1;
 }
 .my-container{
-    background-image: url(images/backg-img1.jpg);
+    background-image: url(images/2024-gx.avif);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -197,7 +197,7 @@ header{
     transition:0.3s ease;
 }
 .my-container2{
-    background-image: url(images/back-img2.jpg);
+    background-image: url(images/2024-tx.avif);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -426,6 +426,43 @@ header{
     display: grid;
     place-items: center;
     margin-top: 120px;
+}
+footer{
+    background-color: rgb(36, 33, 33);
+}
+.footer-info-wrapper{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.footer-info-wrapper h5{
+    color: white;
+    margin: 30px 0;
+}
+.footer-info-wrapper p{
+    color: rgb(169, 164, 164);
+}
+.social-icons img {
+    width: 30px;
+    margin-top: 60px;
+    cursor: pointer;
+}
+.social-icons img:hover {
+    transform: scale(1.1);
+    transition: 0.3s ease;
+}
+.social-icons img:not(:hover) {
+    transform: scale(1);
+    transition: 0.3s ease;
+}
+.social-icons {
+    width: 110px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
 }
 @media (max-width: 750px) {
     .your-lexus{

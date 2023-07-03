@@ -112,6 +112,7 @@ burgerIcon.addEventListener('click', () => {
     navigationWrapper.style.display = 'block';
   } else if (clickCount2 === 2) {
     navigationWrapper.style.display = 'none';
+    slider.style.display = 'none'
     clickCount2 = 0;
   }
 });
