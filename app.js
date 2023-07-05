@@ -156,10 +156,10 @@ butgerIconSignUpBtn.addEventListener('click' , () =>{
 })
 
 const logInBtn = document.getElementById('log-in-btn');
-const logInModal = document.querySelector('.log-in-modal');
+const logInModal = document.querySelector('.fixed-background');
 
 logInBtn.addEventListener('click', () => {
-  logInModal.style.display = 'block'
+  logInModal.style.display = 'grid'
   signInBox.style.display = 'none'
 });
 
@@ -169,17 +169,94 @@ closeModalIcon.addEventListener('click' , () =>{
 })
 
 const registrationBtn = document.getElementById('sign-up-btn')
-const registrationForm = document.querySelector('.log-in-modal.registration-modal')
+const registrationForm = document.querySelector('.fixed-background.fixed-background-log-in')
 
 registrationBtn.addEventListener('click' , () =>{
-  registrationForm.style.display = 'block'
+  registrationForm.style.display = 'grid'
   signInBox.style.display = 'none'
 })
+
 const closeModalIcon2 = registrationForm.querySelector('.close-icon');
 closeModalIcon2.addEventListener('click', () => {
   registrationForm.style.display = 'none';
 });
 
+const checkBox1 = document.getElementById('checkbox-input1');
+const passwordInput1 = document.querySelector('.log-in-modal .password-input');
+const checkBox2 = document.getElementById('checkbox-input2');
+const passwordInput2 = document.querySelector('.registration-modal .password-input');
 
+checkBox1.addEventListener('click', () => {
+  if (checkBox1.checked) {
+    passwordInput1.type = 'text';
+  } else {
+    passwordInput1.type = 'password';
+  }
+});
 
+checkBox2.addEventListener('click', () => {
+  if (checkBox2.checked) {
+    passwordInput2.type = 'text';
+  } else {
+    passwordInput2.type = 'password';
+  }
+});
 
+const firstName = document.getElementById('firstname');
+const lastName = document.getElementById('lastname');
+const username = document.getElementById('username');
+const email = document.getElementById('email');
+const passcode = document.getElementById('passcode');
+const form = document.querySelector('.login-form');
+const registerBtn = document.querySelector('.login-btn.registration-btn');
+const signInResponsive = document.getElementById('sign-in-responsive');
+const logInmodal = document.querySelector('.fixed-background');
+
+registerBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+
+  const enteredEmail = email.value;
+  const enteredPasscode = passcode.value;
+
+  const storedEmail = localStorage.getItem('email');
+  const storedPasscode = localStorage.getItem('password');
+
+  if (firstName.value === '' || lastName.value === '' || username.value === '' || email.value === '' || passcode.value === '') {
+    alert('Please fill in all fields');
+  } else {
+    localStorage.setItem('username', username.value);
+    localStorage.setItem('email', email.value);
+    localStorage.setItem('password', passcode.value);
+    alert('Form submitted successfully');
+
+    if (storedEmail === enteredEmail && storedPasscode === enteredPasscode) {
+      const welcomeMessage = document.getElementById('welcome-message');
+      welcomeMessage.textContent = `Welcome ${firstName.value}!`;
+      registrationForm.style.display = 'none';
+      signUpBtn.style.display = 'none';
+      signInResponsive.style.display = 'none';
+    }
+  }
+});
+
+const logInButton = document.querySelector('.login-btn');
+const logInEmail = document.getElementById('login-email');
+const logInPassword = document.getElementById('login-password');
+
+logInButton.addEventListener('click', (e) => {
+  e.preventDefault();
+
+  const storedEmail = localStorage.getItem('email');
+  const storedPasscode = localStorage.getItem('password');
+
+  if (logInEmail.value === storedEmail && logInPassword.value === storedPasscode) {
+    const storedUsername = localStorage.getItem('username');
+    const welcomeMessage = document.getElementById('welcome-message');
+    welcomeMessage.textContent = `Welcome ${storedUsername}!`;
+    logInmodal.style.display = 'none';
+    signUpBtn.style.display = 'none';
+    signInResponsive.style.display = 'none';
+  } else {
+    alert('Account is not registered.');
+  }
+});

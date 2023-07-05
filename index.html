@@ -32,6 +32,9 @@
                                 <img class="burger-icon" src="images/burger-icon.png" alt="#">
                             </button>
                         </li>
+                        <li>
+                            <p id="welcome-message"></p>
+                        </li>
                     </ul>
                 </nav>
             </div>
@@ -40,7 +43,7 @@
             <div class="list burger-btn" >
                 <button id="burger-icon-btn" >VEHICLES</button>
             </div>
-            <div class="list">
+            <div class="list" id="sign-in-responsive">
                 <button id="burger-icon-signup-btn">SIGN-IN</button>
             </div>
         </div>
@@ -497,44 +500,65 @@
             </div>
         </div>
     </footer>
-    <div class="log-in-modal">
-        <button class="close-icon">close</button>
-        <h3>Login</h3>
-        <form class="login-form" action="">
-            <div class="input-field">
-                <input type="email" name="" id="" placeholder="Email..">
-                <img src="images/envelope.svg" alt="##">
-            </div>
-            <div class="input-field">
-                <input type="password" name="" id="" placeholder="Password..">
-                <img src="images/padlock.svg" alt="##">
-            </div>
-            <button class="login-btn">Login</button>
-        </form>
+    <div class="fixed-background">
+        <div class="log-in-modal">
+            <button class="close-icon">
+                <img src="images/close-modal-icon.png" alt="">
+            </button>
+            <h3>Login</h3>
+            <form class="login-form" action="">
+                <div class="input-field">
+                    <input type="email" name="" id="login-email" placeholder="Email..">
+                    <img src="images/envelope.svg" alt="##">
+                </div>
+                <div class="input-field">
+                    <input type="password" name="" id="login-password" class="password-input" placeholder="Password..">
+                    <img src="images/padlock.svg" alt="##">
+                </div>
+                <div>
+                    <label id="checkbox1">
+                        <input type="checkbox" id="checkbox-input1">
+                        <span>show password</span>
+                    </label>
+                </div>
+                <button class="login-btn">Login</button>
+            </form>
+        </div>
     </div>
-    <div class="log-in-modal registration-modal">
-        <button class="close-icon">close</button>
-        <h3>Register</h3>
-        <form class="login-form" action="">
-            <div class="input-full-name">
-                <input type="text" name="" id="" placeholder="First Name">
-                <input type="text" name="" id="" placeholder="Last Name">
-            </div>
-            <div class="input-field">
-                <input type="text" placeholder="Username">
-                <img src="images/username-icon.svg" alt="">
-            </div>
-            <div class="input-field">
-                <input type="email" name="" id="" placeholder="Email..">
-                <img src="images/envelope.svg" alt="##">
-            </div>
-            <div class="input-field">
-                <input type="password" name="" id="" placeholder="Password..">
-                <img src="images/padlock.svg" alt="##">
-            </div>
-            <button class="login-btn registration-btn">Register</button>
-        </form>
+    <div class="fixed-background fixed-background-log-in">
+        <div class="log-in-modal registration-modal">
+            <button class="close-icon">
+                <img src="images/close-modal-icon.png" alt="">
+            </button>
+            <h3>Register</h3>
+            <form class="login-form" action="">
+                <div class="input-full-name">
+                    <input type="text" name="" id="firstname" placeholder="First Name">
+                    <input type="text" name="" id="lastname" placeholder="Last Name">
+                </div>
+                <div class="input-field">
+                    <input type="text" placeholder="Username" id="username">
+                    <img src="images/username-icon.svg" alt="">
+                </div>
+                <div class="input-field">
+                    <input type="email" name="" id="email" placeholder="Email..">
+                    <img src="images/envelope.svg" alt="##">
+                </div>
+                <div class="input-field">
+                    <input type="password" name="" id="passcode" class="password-input" placeholder="Password..">
+                    <img src="images/padlock.svg" alt="##">
+                </div>
+                <div>
+                    <label id="checkbox2">
+                        <input type="checkbox" id="checkbox-input2">
+                        <span>show password</span>
+                    </label>
+                </div>
+                <button class="login-btn registration-btn">Register</button>
+            </form>
+        </div>
     </div>
+    
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="app.js"></script>
 </body>
