@@ -30,6 +30,14 @@ header{
     transform: scale(1);
     transition:0.3s ease ;
 }
+#signUp-modal:hover{
+    transform: scale(1.2);
+    transition:0.3s ease; ;
+}
+#signUp-modal:not(:hover){
+    transform: scale(1);
+    transition:0.3s ease ;
+}
 .navigation {
     display: flex;
     align-items: center;
@@ -77,7 +85,7 @@ header{
 }
 .slider-wrapper {
     position: absolute;
-    z-index: 3;
+    z-index: 4;
     background: #eee;
     font-size: 14px;
     color: #000;
@@ -107,18 +115,71 @@ header{
     transform: translateY(-50%);
     width: 30px;
     height: 30px;
-    color: #fff;
+    color: black !important;
     font-size: 18px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
 }
+.swiper-button-next2,
+.swiper-button-prev2{
+    color:white !important;
+}
 .swiper-button-prev{
     left: 10px;
 }
 .swiper-button-next {
     right: 15px;
+}
+.sign-in-box {
+    position: absolute;
+    z-index: 3;
+    display: none;
+    width: 100%;
+}
+.sign-up-btn{
+    width: 220px;
+    margin-bottom: 5px;
+    padding: 15px 0;
+    border-radius: 10px;
+}
+.sign-up-btn:hover{
+    color: white;
+    background-color: black;
+    transition: 0.3s ease;
+}
+.sign-up-btn:not(:hover){
+    color: black;
+    background-color: white;
+    transition: 0.3s ease;
+}
+.background{
+    background-color: white;
+    width: 100%;
+}
+.smaller-container{
+    max-width: 1050px;
+    margin: 0px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 40px 0;
+}
+.sign-in-wrapper{
+    flex: 1;
+}
+.sign-in-wrapper img{
+    margin: 0 40px;
+}
+.sign-in-wrapper h4{
+    font-family: myFont;
+    margin-bottom: 14px;
+}
+.sign-in{
+    padding-bottom:4px ;
+    border-bottom: 3px solid black;
 }
 .car-wrapper{
     max-width: 1150px ;
@@ -177,30 +238,50 @@ header{
     margin: 10px 0px 300px 0px;
     font-size: 25px;
 }
-.learn-more-btn:hover .btn{
-    color: white;
-}
-
-.learn-more-btn a{
-    border: 2px solid white;
-    cursor: pointer;
-    background-color: #eee;
-    color: black;
-    font-size: 13px;
-    padding: 15px 50px;
-    font-family: myfont;
-}
-.learn-more-btn a:hover{
-    background-color: transparent;
-    color: black;
-    text-decoration: none;
-    transition:0.3s ease;
-}
 .my-container2{
     background-image: url(images/2024-tx.avif);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+.learn-more-btn{
+    background-color: white;
+    padding: 10px 45px;
+    border: 2px solid white;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+.learn-more-btn:hover{
+    background-color: transparent;
+    transition: 0.3s ease;
+}
+.learn-more-btn:not(:hover){
+    background-color: white;
+    transition: 0.3s ease;
+}
+.btn{
+    color: black;
+    text-decoration: none;
+    font-family: myFont;
+}
+.learn-more-btn:hover .btn{
+    color: white;
+    transition: 0.3s ease;
+}
+.learn-more-btn:not(:hover) .btn{
+    color: black;
+    transition: 0.3s ease;
+}
+.learn-more-btn2{
+    border: 2px solid black;
+}
+.learn-more-btn2:hover{
+    background-color: black;
+    transition: 0.3s ease;
+}
+.learn-more-btn2:not(:hover){
+    background-color: white;
+    transition: 0.3s ease;
 }
 .slide{
     overflow-y: scroll;
@@ -286,22 +367,11 @@ header{
 .vehicles{
     flex: 1;
     height: 350px;
+    margin-top: 30px;
 }
 .vehicles span{
     text-align: center;
     margin: 10px 0;
-}
-.learn-more-btn2{
-    border: 2px solid black;
-    padding: 13px 50px;
-}
-.learn-more-btn2:hover{
-    background-color: black;
-    transition:0.3s ease  ;
-}
-.learn-more-btn2 a{
-    color: rgb(37, 37, 82);
-    font-family: myFont;
 }
 .relative-for-h3{
     position: relative;
@@ -318,11 +388,13 @@ header{
     overflow-x: auto;
     align-items: center;
     justify-content: space-between;
+    overflow-x: y;
 }
 .lexus-car{
     display: grid;
     place-items: center;
     margin:0px 40px 0px 10px;
+    height: 150px;
 }
 .lexus-car img{
     width: 150px;
@@ -334,8 +406,11 @@ header{
     background-color: white;
 }
 .car-model:hover{
-    text-decoration: underline;
     transform: scale(1.1);
+    transition:0.3s ease ;
+}
+.car-model:not(:hover){
+    transform: scale(1);
     transition:0.3s ease ;
 }
 .explore-lexus-wrapper , .nature-img{
@@ -356,8 +431,8 @@ header{
 .btn-flex-box{
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    width: 320px;
+    justify-content: space-between;
+    width: 410px;
 }
 .your-lexus{
     display: flex;
@@ -464,6 +539,109 @@ footer{
     align-items: center;
     margin-bottom: 60px;
 }
+.input-field{
+    position: relative;
+}
+.input-field input{
+    width: 100%;
+    padding-left: 10px;
+    height: 35px;
+    margin: 20px 0;
+    color: white;
+    border: none;
+    border-bottom: 2px solid rgb(54, 54, 54);
+    outline: none;
+    background: transparent;
+}
+.login-form{
+    max-width: 300px;
+    margin: 0 auto;
+}
+.input-field img{
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    width: 20px;
+}
+.login-btn{
+    width: 100%;
+    height: 42px;
+    border-radius: 6px;
+    color: white;
+    font-family: myFont;
+    background-color: rgb(54, 52, 52);
+    margin: 15px 0;
+}
+.log-in-modal{
+    width: 345px;
+    border-radius: 15px;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 44%, rgba(0,212,255,1) 100%);
+    padding: 20px 0;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    z-index: 2;
+    display: none;
+}
+body{
+    position: relative;
+}
+.log-in-modal h3{
+    text-align: center;
+    font-family: myFont;
+    color: black;
+    font-size: 28px;
+}
+.close-modal-img{
+    width: 100px;
+    background: transparent;
+}
+.close-icon{
+    background-color:transparent;
+    border: none;
+    color: rgb(175, 175, 175);
+    position: fixed;
+    width: 50px;
+    right: 10px;
+    margin-bottom: 20px;
+}
+.close-icon:hover{
+    color: #eee;
+    transition: 0.3s linear;
+}
+.close-icon:not(:hover){
+    color:rgb(175, 175, 175);
+    transition: 0.3s linear;
+}
+.login-btn:hover{
+    background-color: transparent;
+    transition: 0.5s ease-in-out;
+}
+.login-btn:not(:hover){
+    transition: 0.5s ease-in-out;
+}
+/* .registration-modal{
+    display: block;
+} */
+.input-full-name{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.input-full-name input{
+    height: 35px;
+    margin: 20px 0;
+    color: white;
+    border: none;
+    border-bottom: 2px solid rgb(54, 54, 54);
+    outline: none;
+    background: transparent;
+    width: 140px;
+    padding: 20px 10px;
+}
 @media (max-width: 750px) {
     .your-lexus{
         flex-direction: column;
@@ -487,13 +665,43 @@ footer{
     h3{
         text-align: center;
     }
-    .btn-flex-box{
-        width: 300px;
-    }
     .regular-li{
         display: none;
     }
     .burger-icon{
         display: block;
+    }
+    .my-container h1{
+        font-size: 40px;
+    }
+    .future-cars{
+        margin-top: 190px;
+    }
+    .log-in-modal{
+        top: 8%;
+    }
+}
+@media (max-width : 450px) {
+    .btn-flex-box{
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .learn-more-btn{
+        width: 100%;
+        padding: 12px 0;
+        display: grid;
+        place-items: center;
+    }
+    .sign-up-btn{
+        width: 100%;
+    }
+    .sign-in-wrapper img{
+        width: 250px;
+    }
+}
+@media (max-width : 360px) {
+    .log-in-modal{
+        width: 100%;
     }
 }

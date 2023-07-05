@@ -24,6 +24,7 @@ vehicleBtn.addEventListener('click', () => {
     slider.style.overflow = 'hidden';
     leftBtn.style.display = 'none'
     rightBtn.style.display = 'none'
+    signInBox.style.display = 'none'
     setTimeout(() => {
       slider.style.height = '650px';
     }, 10);
@@ -37,69 +38,59 @@ vehicleBtn.addEventListener('click', () => {
   }
 });
 
-const mainImg = document.querySelector('.your-lexus-picture')
-const carName = document.querySelector('.model')
+const signUpBtn = document.getElementById('signUp-modal');
+const signInBox = document.querySelector('.sign-in-box');
 
-const btn1 = document.getElementById('btn1')
-const btn2 = document.getElementById('btn2')
-const btn3 = document.getElementById('btn3')
-const btn4 = document.getElementById('btn4')
-const btn5 = document.getElementById('btn5')
-const btn6 = document.getElementById('btn6')
-const btn7 = document.getElementById('btn7')
-const btn8 = document.getElementById('btn8')
-const btn9 = document.getElementById('btn9')
-const btn10 = document.getElementById('btn10')
+signUpBtn.addEventListener('click', () => {
+  clickCount++;
+  if(clickCount % 2 === 1){
+    signInBox.style.display = 'block';
+    slider.style.display = 'none'
+    signInBox.style.transition = 'height 0.3s ease-in-out';
+    signInBox.style.height = '0'
+    setTimeout(() => {
+      signInBox.style.height = 'auto';
+    }, 10);
+  }
+  else{
+    signInBox.style.display = 'none'
+  }
+});
 
-btn1.addEventListener('click' , () => {
-  mainImg.setAttribute('src' , 'images/ux-hybrid.webp')
-  carName.textContent = 'UX HYBRID'
-})
+const carInfo = [
+  { name: "UX HYBRID", imageUrl: "images/ux-hybrid.webp" },
+  { name: "NX", imageUrl: "images/nx.avif" },
+  { name: "NX HYBRID", imageUrl: "images/nx-hybrid.avif" },
+  { name: "NX PHEV", imageUrl: "images/nx-phev.avif" },
+  { name: "RZ", imageUrl: "images/rz.avif" },
+  { name: "RX", imageUrl: "images/rx.avif" },
+  { name: "RX HYBRID", imageUrl: "images/rx-hybrid.avif" },
+  { name: "RX 500h", imageUrl: "images/rx500h.avif" },
+  { name: "GX", imageUrl: "images/gx.avif" },
+  { name: "LX", imageUrl: "images/lx.avif" }
+];
 
-btn2.addEventListener('click' , () => {
-  mainImg.setAttribute('src' , "images/nx.avif")
-  carName.textContent = 'NX'
-})
+const suvWrapper = document.querySelector('.suv-wrapper');
+const mainImg = document.querySelector('.your-lexus-picture');
+const carName = document.querySelector('.model');
 
-btn3.addEventListener('click' , () => {
-  mainImg.setAttribute('src' , "images/nx-hybrid.avif")
-  carName.textContent = 'NX HYBRID'
-})
+for(let i = 0 ; i < carInfo.length ; i++){
+  const lexusCar = document.createElement('div')
+  lexusCar.classList.add('lexus-car')
+  lexusCar.innerHTML = `
+      <button id = '${i}' class="car-model">
+        <img src="${carInfo[i].imageUrl}" alt="#">
+        <p>${carInfo[i].name}</p>
+      </button>`
+  suvWrapper.appendChild(lexusCar)
 
-btn4.addEventListener('click' , () => {
-  mainImg.setAttribute('src' , "images/nx-phev.avif")
-  carName.textContent = 'NX PHEV'
-})
+  const carButton = document.getElementById(`${i}`)
+  carButton.addEventListener('click' , () =>{
+    mainImg.setAttribute('src' , `${carInfo[i].imageUrl}`)
+    carName.textContent = `${carInfo[i].name}`
+  })
+}
 
-btn5.addEventListener('click' , () => {
-  mainImg.setAttribute('src' , "images/rz.avif")
-  carName.textContent = 'RZ'
-})
-
-btn6.addEventListener('click' , () => {
-  mainImg.setAttribute('src' , "images/rx.avif")
-  carName.textContent = 'RX'
-})
-
-btn7.addEventListener('click' , () => {
-  mainImg.setAttribute('src' , "images/rx-hybrid.avif")
-  carName.textContent = 'RX HYBRID'
-})
-
-btn8.addEventListener('click' , () => {
-  mainImg.setAttribute('src' , "images/rx500h.avif")
-  carName.textContent = 'RX 500h'
-})
-
-btn9.addEventListener('click' , () => {
-  mainImg.setAttribute('src' , "images/gx.avif")
-  carName.textContent = 'GX'
-})
-
-btn10.addEventListener('click' , () => {
-  mainImg.setAttribute('src' , "images/lx.avif")
-  carName.textContent = 'LX'
-})
 
 const burgerIcon = document.querySelector('.burger-icon')
 const navigationWrapper = document.querySelector('.navigation-wrapper')
@@ -124,9 +115,10 @@ burgerBtn.addEventListener('click', () => {
     slider.style.display = 'block';
     slider.style.marginTop = '60px';
     slider.style.height = '0';
+    signInBox.style.display = 'none';
     leftBtn.style.display = 'none'
     rightBtn.style.display = 'none'
-    slider.style.transition = 'height 0.3s ease-in-out';
+    slider.style.transition = 'height 3s ease-in-out';
     slider.style.overflow = 'hidden';
     setTimeout(() => {
       slider.style.height = '650px';
@@ -143,6 +135,51 @@ burgerBtn.addEventListener('click', () => {
     isOpen = false;
   }
 });
+
+const  butgerIconSignUpBtn = document.getElementById('burger-icon-signup-btn')
+butgerIconSignUpBtn.addEventListener('click' , () =>{
+  clickCount++;
+  if(clickCount % 2 === 1){
+    signInBox.style.display = 'block';
+    slider.style.display = 'none'
+    signInBox.style.transition = 'height 0.3s ease-in-out';
+    signInBox.style.height = '0'
+    signInBox.style.marginTop = '120px'
+
+    setTimeout(() => {
+      signInBox.style.height = 'auto';
+    }, 10);
+  }
+  else{
+    signInBox.style.display = 'none'
+  }
+})
+
+const logInBtn = document.getElementById('log-in-btn');
+const logInModal = document.querySelector('.log-in-modal');
+
+logInBtn.addEventListener('click', () => {
+  logInModal.style.display = 'block'
+  signInBox.style.display = 'none'
+});
+
+const closeModalIcon = document.querySelector('.close-icon')
+closeModalIcon.addEventListener('click' , () =>{
+  logInModal.style.display = 'none'
+})
+
+const registrationBtn = document.getElementById('sign-up-btn')
+const registrationForm = document.querySelector('.log-in-modal.registration-modal')
+
+registrationBtn.addEventListener('click' , () =>{
+  registrationForm.style.display = 'block'
+  signInBox.style.display = 'none'
+})
+const closeModalIcon2 = registrationForm.querySelector('.close-icon');
+closeModalIcon2.addEventListener('click', () => {
+  registrationForm.style.display = 'none';
+});
+
 
 
 
