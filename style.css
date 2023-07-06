@@ -814,6 +814,12 @@ footer{
     .future-cars{
         margin-top: 190px;
     }
+    .lexus-logo{
+        width: 120px;
+    }
+    #welcome-message{
+        display: none;
+    }
 }
 @media (max-width : 450px) {
     .btn-flex-box{
@@ -839,6 +845,18 @@ footer{
     }
     .footer-content{
         width: 300px;
+    }
+    .lexus-logo{
+        display: none;
+    }
+    nav{
+        width: 100%;
+    }
+    .navigation{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
     }
 }
 @media (max-width : 360px) {
