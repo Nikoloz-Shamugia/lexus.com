@@ -7,6 +7,92 @@
     font-family: myFont;
     src: url(fonts/Montserrat-Bold.ttf);
 }
+body::-webkit-scrollbar {
+    width: 10px;
+} 
+body::-webkit-scrollbar-track {
+    background-color: rgb(255, 255, 255);
+}
+body::-webkit-scrollbar-thumb {
+    background-color: rgb(63, 63, 63);
+    border-radius: 15px;
+}
+body::-ms-scrollbar-track {
+    background-color: rgb(136, 136, 136);
+}
+body::-ms-scrollbar-thumb {
+    background-color: rgb(63, 63, 63);
+    border-radius: 15px;
+}
+/* .suv-wrapper :-webkit-scrollbar {
+    height: 10px;
+} 
+.suv-wrapper ::-webkit-scrollbar-track {
+    background-color: rgb(255, 255, 255);
+}
+.suv-wrapper ::-webkit-scrollbar-thumb {
+    background-color: rgb(63, 63, 63);
+    border-radius: 15px;
+}
+.suv-wrapper ::-ms-scrollbar-track {
+    background-color: rgb(136, 136, 136);
+}
+.suv-wrapper::-ms-scrollbar-thumb {
+    background-color: rgb(63, 63, 63);
+    border-radius: 15px;
+} */
+.suv-wrapper::-webkit-scrollbar {
+    height: 10px;
+} 
+.suv-wrapper::-webkit-scrollbar-track {
+    background-color: rgb(255, 255, 255);
+}
+.suv-wrapper::-webkit-scrollbar-thumb {
+    background-color: rgb(63, 63, 63);
+    border-radius: 15px;
+}
+.suv-wrapper::-ms-scrollbar-track {
+    background-color: rgb(136, 136, 136);
+}
+.suv-wrapper::-ms-scrollbar-thumb {
+    background-color: rgb(63, 63, 63);
+    border-radius: 15px;
+}
+.scroll-container2::-webkit-scrollbar {
+    height: 10px;
+} 
+.scroll-container2::-webkit-scrollbar-track {
+    background-color: rgb(255, 255, 255);
+}
+.scroll-container2::-webkit-scrollbar-thumb {
+    background-color: rgb(63, 63, 63);
+    border-radius: 15px;
+}
+.scroll-container2::-ms-scrollbar-track {
+    background-color: rgb(136, 136, 136);
+}
+.scroll-container2::-ms-scrollbar-thumb {
+    background-color: rgb(63, 63, 63);
+    border-radius: 15px;
+}
+.logout-btn{
+    width: 30px;
+}
+.logout{
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border-radius: 15px;
+    display: none;
+}
+.logout:hover{
+    background-color: rgb(161, 161, 161);
+    transition: 0.3s ease;
+}
+.logout p{
+    margin: 0px 5px;
+
+}
 header{
     box-shadow: 0 0 5px white(0, 0, 0, 0.3);
     border-bottom: 1px solid black;
@@ -41,7 +127,7 @@ header{
 #welcome-message{
     font-family: myFont;
     font-size: 15px;
-    margin-top: 10px;
+    margin: 0px 5px;
 }
 #welcome-message:hover{
     transform: scale(1.2);
@@ -401,7 +487,7 @@ header{
     overflow-x: auto;
     align-items: center;
     justify-content: space-between;
-    overflow-x: y;
+    overflow-x: auto;
 }
 .lexus-car{
     display: grid;
@@ -515,6 +601,43 @@ header{
     place-items: center;
     margin-top: 120px;
 }
+.best-selling-car{
+    display: flex;
+    align-items: flex-start;
+    height: 450px;
+    border: 1px solid rgb(18, 24, 54);
+    border-radius: 15px;
+    width: 400px;
+    margin: 10px 0;
+}
+.best-selling-car-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex: 1;
+    height: 100%;
+    border: 1px dashed black;
+    border-radius: 15px 0px 0px 15px;
+    padding: 0 20px;
+}
+.best-selling-car-value{
+    border-radius: 0px 15px 15px 0px;
+}
+.scroll-container2 {
+    width: 100%;
+    overflow-x: scroll;
+}
+.best-selling-cars-wrapper{
+    width: 2200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.model-name{
+    text-align: center;
+    margin: 25px 0;
+}
 footer{
     background-color: rgb(36, 33, 33);
 }
@@ -524,17 +647,27 @@ footer{
     align-items: flex-start;
     justify-content: space-around;
     flex-wrap: wrap;
+    margin: 60px 0;
 }
 .footer-info-wrapper h5{
     color: white;
     margin: 30px 0;
 }
-.footer-info-wrapper p{
+.footer-info-wrapper a{
     color: rgb(169, 164, 164);
 }
+.footer-info-wrapper a:hover{
+    color: white;
+    text-decoration: none;
+}
+.footer-content{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
 .social-icons img {
-    width: 30px;
-    margin-top: 60px;
+    width: 20px;
+
     cursor: pointer;
 }
 .social-icons img:hover {
@@ -546,11 +679,11 @@ footer{
     transition: 0.3s ease;
 }
 .social-icons {
-    width: 110px;
+    width: 90px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 60px;
+    margin-bottom: 20px;
 }
 .input-field{
     position: relative;
@@ -712,6 +845,13 @@ footer{
     }
     .sign-in-wrapper img{
         width: 250px;
+    }
+    .footer-info-wrapper{
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-content{
+        width: 300px;
     }
 }
 @media (max-width : 360px) {

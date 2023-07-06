@@ -232,7 +232,8 @@ registerBtn.addEventListener('click', (e) => {
     if (storedEmail === enteredEmail && storedPasscode === enteredPasscode) {
       const welcomeMessage = document.getElementById('welcome-message');
       welcomeMessage.textContent = `Welcome ${firstName.value}!`;
-      registrationForm.style.display = 'none';
+      registrationForm.style.display = 'none'
+      logoutBtn.style.display = 'flex';
       signUpBtn.style.display = 'none';
       signInResponsive.style.display = 'none';
     }
@@ -242,6 +243,7 @@ registerBtn.addEventListener('click', (e) => {
 const logInButton = document.querySelector('.login-btn');
 const logInEmail = document.getElementById('login-email');
 const logInPassword = document.getElementById('login-password');
+const logoutBtn = document.querySelector('.logout')
 
 logInButton.addEventListener('click', (e) => {
   e.preventDefault();
@@ -250,9 +252,10 @@ logInButton.addEventListener('click', (e) => {
   const storedPasscode = localStorage.getItem('password');
 
   if (logInEmail.value === storedEmail && logInPassword.value === storedPasscode) {
-    const storedUsername = localStorage.getItem('username');
+    const storedName = localStorage.getItem('username');
     const welcomeMessage = document.getElementById('welcome-message');
-    welcomeMessage.textContent = `Welcome ${storedUsername}!`;
+    welcomeMessage.textContent = `Welcome ${storedName}!`;
+    logoutBtn.style.display = 'flex'
     logInmodal.style.display = 'none';
     signUpBtn.style.display = 'none';
     signInResponsive.style.display = 'none';
@@ -260,3 +263,71 @@ logInButton.addEventListener('click', (e) => {
     alert('Account is not registered.');
   }
 });
+
+const html = document.getElementById('html')
+
+logoutBtn.addEventListener('click' , () =>{
+  html.style.display = 'none'
+})
+async function fetchData() {
+  try {
+    const model = 'rx';
+    const response = await fetch(`https://api.api-ninjas.com/v1/cars?model=${model}`, {
+      method: 'GET',
+      headers: {
+        'X-Api-Key': '83IN8vRlgrD+g+fE9rCDBQ==bjyLQVwhSKEwHM8K',
+        'Content-Type': 'application/json'
+      }
+    });
+
+    if (!response.ok) {
+      throw new Error(`Error: ${response.status}`);
+    }
+
+    const result = await response.json();
+    const bestCarsWrapper = document.querySelector('.best-selling-cars-wrapper');
+    for (let i = 0; i < result.length; i++) {
+      const bestCar = document.createElement('div');
+      bestCar.innerHTML = `
+      <h3 class='model-name'>lexus ${result[i].model}</h3>
+      <div class="best-selling-car">
+        <div class='best-selling-car-info'>
+          <h5>Make</h5>
+          <h5>Model</h5>
+          <h5>Year</h5>
+          <h5>Class</h5>
+          <h5>Fuel Type</h5>
+          <h5>Cylinders</h5>
+          <h5>Displacement</h5>
+          <h5>Transmission</h5>
+          <h5>Drive</h5>
+          <h5>City MPG</h5>
+          <h5>Highway MPG</h5>
+          <h5>Combination MPG</h5>
+        </div>
+        <div class='best-selling-car-info best-selling-car-value'>
+          <p>${result[i].make}</p> 
+          <p>${result[i].model}</p> 
+          <p>${result[i].year}</p> 
+          <p>${result[i].class}</p> 
+          <p>${result[i].fuel_type}</p>
+          <p>${result[i].cylinders}</p> 
+          <p>${result[i].displacement}</p> 
+          <p>${result[i].transmission}</p> 
+          <p>${result[i].drive}</p> 
+          <p>${result[i].city_mpg}</p> 
+          <p>${result[i].highway_mpg}</p> 
+          <p>${result[i].combination_mpg}</p> 
+        </div>
+      </div>
+      `;
+      bestCarsWrapper.appendChild(bestCar);
+    }
+  } catch (error) {
+    console.error('Error:', error);
+  }
+}
+
+fetchData();
+
+
