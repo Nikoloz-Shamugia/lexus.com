@@ -24,23 +24,6 @@ body::-ms-scrollbar-thumb {
     background-color: rgb(63, 63, 63);
     border-radius: 15px;
 }
-/* .suv-wrapper :-webkit-scrollbar {
-    height: 10px;
-} 
-.suv-wrapper ::-webkit-scrollbar-track {
-    background-color: rgb(255, 255, 255);
-}
-.suv-wrapper ::-webkit-scrollbar-thumb {
-    background-color: rgb(63, 63, 63);
-    border-radius: 15px;
-}
-.suv-wrapper ::-ms-scrollbar-track {
-    background-color: rgb(136, 136, 136);
-}
-.suv-wrapper::-ms-scrollbar-thumb {
-    background-color: rgb(63, 63, 63);
-    border-radius: 15px;
-} */
 .suv-wrapper::-webkit-scrollbar {
     height: 10px;
 } 
