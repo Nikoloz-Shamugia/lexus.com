@@ -654,7 +654,6 @@ footer{
 }
 .social-icons img {
     width: 20px;
-
     cursor: pointer;
 }
 .social-icons img:hover {
@@ -666,11 +665,12 @@ footer{
     transition: 0.3s ease;
 }
 .social-icons {
-    width: 90px;
+    width: 180px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+    padding: 0px 40px;
 }
 .input-field{
     position: relative;
@@ -845,18 +845,6 @@ footer{
     }
     .footer-content{
         width: 300px;
-    }
-    .lexus-logo{
-        display: none;
-    }
-    nav{
-        width: 100%;
-    }
-    .navigation{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin: 0 auto;
     }
 }
 @media (max-width : 360px) {

@@ -217,23 +217,35 @@ li button:not(:hover){
 .first-tx img{
     width: 100%;
 }
+footer{
+    background-color: rgb(36, 33, 33);
+}
 .footer-info-wrapper{
     width: 100%;
     display: flex;
     align-items: flex-start;
     justify-content: space-around;
     flex-wrap: wrap;
+    margin: 60px 0;
 }
 .footer-info-wrapper h5{
     color: white;
     margin: 30px 0;
 }
-.footer-info-wrapper p{
+.footer-info-wrapper a{
     color: rgb(169, 164, 164);
 }
+.footer-info-wrapper a:hover{
+    color: white;
+    text-decoration: none;
+}
+.footer-content{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
 .social-icons img {
-    width: 30px;
-    margin-top: 60px;
+    width: 20px;
     cursor: pointer;
 }
 .social-icons img:hover {
@@ -245,11 +257,12 @@ li button:not(:hover){
     transition: 0.3s ease;
 }
 .social-icons {
-    width: 110px;
+    width: 180px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 60px;
+    margin-bottom: 20px;
+    padding: 0px 40px;
 }
 @media (max-width:950px) {
     .button-wrapper{
@@ -283,6 +296,15 @@ li button:not(:hover){
         display: block;
     }
 }
+@media (max-width: 465px) {
+    .footer-info-wrapper{
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-content{
+        width: 300px;
+    }
+}
 @media (max-width: 380px) {
     .lexus-info{
         width: 100%;
@@ -292,5 +314,12 @@ li button:not(:hover){
     }
     .flex-box{
         padding: 0 20px;
+    }
+    .footer-info-wrapper{
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-content{
+        width: 300px;
     }
 }
