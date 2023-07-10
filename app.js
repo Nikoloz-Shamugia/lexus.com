@@ -223,13 +223,17 @@ registerBtn.addEventListener('click', (e) => {
 
   if (firstName.value === '' || lastName.value === '' || username.value === '' || email.value === '' || passcode.value === '') {
     alert('Please fill in all fields');
-  } else {
+  } 
+  else if(enteredPasscode.length < 6){
+    alert('passcode must be at least 6 digits long');
+  }
+  else {
     localStorage.setItem('username', username.value);
     localStorage.setItem('email', email.value);
     localStorage.setItem('password', passcode.value);
-    alert('Form submitted successfully');
 
     if (storedEmail === enteredEmail && storedPasscode === enteredPasscode) {
+      alert('Form submitted successfully')
       const welcomeMessage = document.getElementById('welcome-message');
       welcomeMessage.textContent = `Welcome ${firstName.value}!`;
       registrationForm.style.display = 'none'
@@ -259,7 +263,11 @@ logInButton.addEventListener('click', (e) => {
     logInmodal.style.display = 'none';
     signUpBtn.style.display = 'none';
     signInResponsive.style.display = 'none';
-  } else {
+  }
+  else if(logInPassword.value.length < 6){
+    alert('passcode must be at least 6 digits long');
+  }
+   else {
     alert('Account is not registered.');
   }
 });
