@@ -9,6 +9,40 @@
     font-family: myFont;
     src: url(fonts/Montserrat-Bold.ttf);
 }
+body::-webkit-scrollbar {
+    width: 10px;
+} 
+body::-webkit-scrollbar-track {
+    background-color: rgb(255, 255, 255);
+}
+body::-webkit-scrollbar-thumb {
+    background-color: rgb(63, 63, 63);
+    border-radius: 15px;
+}
+body::-ms-scrollbar-track {
+    background-color: rgb(136, 136, 136);
+}
+body::-ms-scrollbar-thumb {
+    background-color: rgb(63, 63, 63);
+    border-radius: 15px;
+}
+.lexus-info-scrollbar::-webkit-scrollbar {
+    width: 10px;
+} 
+.lexus-info-scrollbar::-webkit-scrollbar-track {
+    background-color: rgb(122, 119, 119);
+}
+.lexus-info-scrollbar::-webkit-scrollbar-thumb {
+    background-color: rgb(63, 63, 63);
+    border-radius: 15px;
+}
+.lexus-info-scrollbar::-ms-scrollbar-track {
+    background-color: rgb(136, 136, 136);
+}
+.lexus-info-scrollbar::-ms-scrollbar-thumb {
+    background-color: rgb(63, 63, 63);
+    border-radius: 15px;
+}
 body{
     background-color: rgb(24, 21, 21);
 }
