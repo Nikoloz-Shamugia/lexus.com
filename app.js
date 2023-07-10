@@ -270,6 +270,7 @@ logInButton.addEventListener('click', (e) => {
    else {
     alert('Account is not registered.');
   }
+  
 });
 
 const html = document.getElementById('html')
