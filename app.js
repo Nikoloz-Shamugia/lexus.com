@@ -229,14 +229,14 @@ registerBtn.addEventListener('click', (e) => {
     localStorage.setItem('password', passcode.value);
     alert('Form submitted successfully');
 
-    // if (storedEmail === enteredEmail && storedPasscode === enteredPasscode) {
+    if (storedEmail === enteredEmail && storedPasscode === enteredPasscode) {
       const welcomeMessage = document.getElementById('welcome-message');
       welcomeMessage.textContent = `Welcome ${firstName.value}!`;
       registrationForm.style.display = 'none'
       logoutBtn.style.display = 'flex';
       signUpBtn.style.display = 'none';
       signInResponsive.style.display = 'none';
-    // }
+    }
   }
 });
 
