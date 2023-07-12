@@ -218,25 +218,25 @@ registerBtn.addEventListener('click', (e) => {
   const enteredEmail = email.value;
   const enteredPasscode = passcode.value;
 
-  const storedEmail = localStorage.getItem('email');
-  const storedPasscode = localStorage.getItem('password');
-
   if (firstName.value === '' || lastName.value === '' || username.value === '' || email.value === '' || passcode.value === '') {
     alert('Please fill in all fields');
-  } 
-  else if(enteredPasscode.length < 6){
-    alert('passcode must be at least 6 digits long');
-  }
-  else {
+  } else if (enteredPasscode.length < 6) {
+    alert('Password must be at least 6 characters long');
+  } else if (!enteredEmail.includes('@')) {
+    alert('Please enter a valid email address');
+  } else {
     localStorage.setItem('username', username.value);
     localStorage.setItem('email', email.value);
     localStorage.setItem('password', passcode.value);
 
+    const storedEmail = localStorage.getItem('email');
+    const storedPasscode = localStorage.getItem('password');
+
     if (storedEmail === enteredEmail && storedPasscode === enteredPasscode) {
-      alert('Form submitted successfully')
+      alert('Form submitted successfully');
       const welcomeMessage = document.getElementById('welcome-message');
       welcomeMessage.textContent = `Welcome ${firstName.value}!`;
-      registrationForm.style.display = 'none'
+      registrationForm.style.display = 'none';
       logoutBtn.style.display = 'flex';
       signUpBtn.style.display = 'none';
       signInResponsive.style.display = 'none';
@@ -247,7 +247,7 @@ registerBtn.addEventListener('click', (e) => {
 const logInButton = document.querySelector('.login-btn');
 const logInEmail = document.getElementById('login-email');
 const logInPassword = document.getElementById('login-password');
-const logoutBtn = document.querySelector('.logout')
+const logoutBtn = document.querySelector('.logout');
 
 logInButton.addEventListener('click', (e) => {
   e.preventDefault();
@@ -259,18 +259,15 @@ logInButton.addEventListener('click', (e) => {
     const storedName = localStorage.getItem('username');
     const welcomeMessage = document.getElementById('welcome-message');
     welcomeMessage.textContent = `Welcome ${storedName}!`;
-    logoutBtn.style.display = 'flex'
+    logoutBtn.style.display = 'flex';
     logInmodal.style.display = 'none';
     signUpBtn.style.display = 'none';
     signInResponsive.style.display = 'none';
-  }
-  else if(logInPassword.value.length < 6){
-    alert('passcode must be at least 6 digits long');
-  }
-   else {
+  } else if (logInPassword.value.length < 6) {
+    alert('Password must be at least 6 characters long');
+  } else {
     alert('Account is not registered.');
   }
-  
 });
 
 const html = document.getElementById('html')

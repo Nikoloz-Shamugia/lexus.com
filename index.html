@@ -9,6 +9,39 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>lexus.com</title>
+    <!-- <style>
+        @keyframes buttonAnimation {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+            100% { transform: translateY(0); }
+        }
+    
+        #signUp-modal {
+            animation-name: buttonAnimation;
+            animation-duration: 1s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+        }
+    </style> -->
+    <style>
+        @keyframes buttonAnimation {
+            0% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+    
+        #signUp-modal {
+            animation-name: buttonAnimation;
+            animation-duration: 1.2s;
+            animation-timing-function: ease-in-out;
+            animation-fill-mode: forwards;
+        }
+    </style>
 </head>
 <body>
     <header id="header">
@@ -526,7 +559,7 @@
             <h3>Login</h3>
             <form class="login-form" action="">
                 <div class="input-field">
-                    <input type="email" name="" id="login-email" placeholder="Email..">
+                    <input type="email" name="" id="login-email" placeholder="Email.." pattern=".*@.*" required>
                     <img src="images/envelope.svg" alt="##">
                 </div>
                 <div class="input-field">
@@ -559,11 +592,11 @@
                     <img src="images/username-icon.svg" alt="">
                 </div>
                 <div class="input-field">
-                    <input type="email" name="" id="email" placeholder="Email..">
+                    <input type="email" name="" id="email" placeholder="Email.." pattern=".*@.*" required>
                     <img src="images/envelope.svg" alt="##">
                 </div>
                 <div class="input-field">
-                    <input type="password" name="" id="passcode" class="password-input" placeholder="Password..">
+                    <input type="password" name="" id="passcode" class="password-input" placeholder="Password.." >
                     <img src="images/padlock.svg" alt="##">
                 </div>
                 <div>
